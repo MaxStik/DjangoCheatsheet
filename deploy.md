@@ -34,7 +34,9 @@ cd ~/myproject
 ##### Клонируем проект с репозитория
 `git clone link`
 ##### Устанавливаем все пакеты
+
 `pip install -r requirements.txt`
+
 Gunicorn
 ----- 
 ```
