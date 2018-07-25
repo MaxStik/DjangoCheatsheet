@@ -1,13 +1,12 @@
 h1 Деплой проекта на сервер
 ====
-
-Обновляем сервер.
-sudo apt-get update
-Ставим системные пакеты:
-sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx ruby redis build-essential tcl
-Логинимся в базу
-sudo -u postgres psql
-Создаем базу пользователя и даем ему права
+### Обновляем сервер.
+`sudo apt-get update`
+### Ставим системные пакеты:
+`sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx ruby redis build-essential tcl`
+### Логинимся в базу
+`sudo -u postgres psql`
+### Создаем базу пользователя и даем ему права
 ```
 CREATE DATABASE myproject;
 CREATE USER myprojectuser WITH PASSWORD 'password';
@@ -16,15 +15,14 @@ ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
 ALTER ROLE myprojectuser SET timezone TO 'UTC';
 GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
 ```
-Выходим 
+### Выходим 
 `\q`
-Апгрейдим pip и ставим virtualenv
+### Апгрейдим pip и ставим virtualenv
 ```
 sudo -H pip3 install --upgrade pip
 sudo -H pip3 install virtualenv
 ```
-
-Создаем папку проекта и переходим в нее
+### Создаем папку проекта и переходим в нее
 ```
 mkdir ~/myproject
 cd ~/myproject
@@ -37,10 +35,7 @@ cd ~/myproject
 `git clone link`
 Устанавливаем все пакеты
 `pip install -r requirements.txt`
-
-
-
-h2 Gunicorn
+Gunicorn
 ----- 
 ```
 pip install gunicorn
@@ -61,8 +56,7 @@ ExecStart=/home/sammy/myproject/myprojectenv/bin/gunicorn --access-logfile - --w
 [Install]
 WantedBy=multi-user.target
 ```
-
-h2 Nginx
+Nginx
 ----
 ```
 server {
@@ -82,8 +76,7 @@ server {
         }
 }
 ```
-
-Запускаем проект
+### Запускаем проект
 ```
 sudo service project start
 sudo service project enable
