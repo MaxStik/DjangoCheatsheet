@@ -1,7 +1,7 @@
-h1
+Flower
 ====
 
-h2 nginx файл 
+Nginx файл 
 ----
 ```
 server {
@@ -9,12 +9,12 @@ server {
     server_name flower.domain.com;
 
     location / {
-        proxy_pass http://stik.one:port;
+        proxy_pass http://domain.com:port;
     	proxy_set_header Host $host;            
     }
 }
 ```
-h2 unit файл
+Unit файл
 ----
 ```
 [Unit]
