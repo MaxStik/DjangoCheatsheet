@@ -1,4 +1,4 @@
-h1 celery
+Celery
 ====
 Ставим селери
 `pip install celery==4.0.2`
