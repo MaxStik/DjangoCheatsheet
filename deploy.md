@@ -27,13 +27,13 @@ sudo -H pip3 install virtualenv
 mkdir ~/myproject
 cd ~/myproject
 ```
-Создаем окружение
+##### Создаем окружение
 `virtualenv venv`
-Активируем окружение
+##### Активируем окружение
 `source venv/bin/activate`
-Клонируем проект с репозитория
+##### Клонируем проект с репозитория
 `git clone link`
-Устанавливаем все пакеты
+##### Устанавливаем все пакеты
 `pip install -r requirements.txt`
 Gunicorn
 ----- 
