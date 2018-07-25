@@ -1,4 +1,4 @@
-h1 redis
+Redis
 =====
 Переходим во временную папку
 `cd /tmp`
@@ -19,7 +19,7 @@ sudo mkdir /etc/redis
 sudo cp /tmp/redis-stable/redis.conf /etc/redis
 sudo nano /etc/redis/redis.conf
 ```
-Настраиваем
+### Настраиваем
 значение `supervised` задаем `systemd`
 значение `dir` ставим `/var/lib/redis`
 
@@ -55,4 +55,4 @@ sudo chmod 770 /var/lib/redis
 sudo systemctl start redis
 sudo systemctl enable redis
 ```
-Все!
+#### Все!
